@@ -876,6 +876,124 @@ footer {
 
   footer { flex-direction: column; text-align: center; }
 }
+.cfp-form-btn {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-top: 1.5rem;
+  padding: 1rem 2rem;
+  background: var(--accent2);
+  color: white;
+  text-decoration: none;
+  font-family: var(--tc);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: background 0.2s, transform 0.2s;
+  border: none;
+}
+.cfp-form-btn:hover {
+  background: var(--ink);
+  transform: translateY(-2px);
+}
+
+/* ── CFP BLOCKS ── */
+.cfp-block {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  gap: 0 2.5rem;
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--mist);
+  align-items: start;
+}
+.cfp-block:last-child { border-bottom: none; }
+
+.cfp-num {
+  font-family: var(--serif);
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: var(--mist);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  padding-top: 0.2rem;
+}
+
+.cfp-title {
+  font-family: var(--tc);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+}
+
+.cfp-date {
+  margin-bottom: 1.2rem;
+}
+
+.cfp-date-main {
+  font-family: var(--mono);
+  font-size: 0.88rem;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  background: rgba(196,25,60,0.06);
+  border: 1px solid rgba(196,25,60,0.2);
+  padding: 0.35rem 0.9rem;
+  display: inline-block;
+}
+
+.cfp-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.cfp-list li {
+  font-size: 0.9rem;
+  color: var(--fade);
+  line-height: 1.8;
+  padding-left: 1.2rem;
+  position: relative;
+  font-family: var(--tc);
+  font-weight: 300;
+}
+
+.cfp-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent2);
+  font-size: 0.8rem;
+}
+
+.cfp-list strong { color: var(--ink); font-weight: 600; }
+
+.cfp-link {
+  color: var(--accent2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+.cfp-link:hover { color: var(--accent); }
+
+.cfp-award-note {
+  margin-top: 2rem;
+  padding: 1.5rem 2rem;
+  background: rgba(110,31,196,0.05);
+  border-left: 3px solid var(--accent2);
+  font-size: 0.9rem;
+  color: var(--fade);
+  line-height: 1.9;
+  font-family: var(--tc);
+}
+.cfp-award-note strong { color: var(--ink); }
+
+@media (max-width: 900px) {
+  .cfp-block { grid-template-columns: 1fr; gap: 0.5rem; }
+  .cfp-num { font-size: 2rem; }
+}
 </style>
 </head>
 <body>
@@ -889,7 +1007,7 @@ footer {
     <li><a href="#submission">投稿</a></li>
     <li><a href="#awards">獎項</a></li>
     <li><a href="#venue">地點</a></li>
-    <li><a href="#contact" class="nav-cta">立即投稿</a></li>
+    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfLvMaJFllZRMaNMYLPAK-ALozPZwGhh1QcbhoZQ6nCQWsylA/viewform" target="_blank" class="nav-cta">立即投稿</a></li>
   </ul>
 </nav>
 
@@ -906,7 +1024,7 @@ footer {
       <div class="hero-meta-item">截稿 &nbsp;<span>2026 年 5 月 30 日</span></div>
     </div>
     <div class="hero-actions">
-      <a href="#submission" class="btn btn-primary">投稿須知</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLvMaJFllZRMaNMYLPAK-ALozPZwGhh1QcbhoZQ6nCQWsylA/viewform" target="_blank" class="btn btn-primary">立即投稿</a>
       <a href="#dates" class="btn btn-secondary">重要日期</a>
     </div>
   </div>
@@ -1025,77 +1143,98 @@ footer {
     <h2 class="section-heading reveal">投稿說明</h2>
     <p class="section-sub reveal">Submission Guidelines</p>
 
-    <div class="sub-grid">
-      <div class="sub-card reveal">
-        <div class="sub-card-num">01</div>
-        <div class="sub-card-cat">Category A</div>
-        <div class="sub-card-title">論文發表<br><span style="font-weight:300;font-size:0.9rem">Paper Presentation</span></div>
-        <div class="sub-card-body">以學術論文或創作思維為主，需具備完整論述結構，含研究目的、方法、結果與討論。</div>
-        <div class="sub-card-pages">建議頁數 → 4–6 頁</div>
-      </div>
-      <div class="sub-card reveal reveal-delay-1">
-        <div class="sub-card-num">02</div>
-        <div class="sub-card-cat">Category B</div>
-        <div class="sub-card-title">海報發表<br><span style="font-weight:300;font-size:0.9rem">Poster Presentation</span></div>
-        <div class="sub-card-body">以創作或研究計畫為主，強調視覺呈現與簡潔說明，適合進行中的計畫或創作。</div>
-        <div class="sub-card-pages">建議頁數 → 2 頁</div>
-      </div>
-      <div class="sub-card reveal reveal-delay-2">
-        <div class="sub-card-num">03</div>
-        <div class="sub-card-cat">Category C</div>
-        <div class="sub-card-title">展示發表<br><span style="font-weight:300;font-size:0.9rem">Demo Presentation</span></div>
-        <div class="sub-card-body">以作品或計畫實際展示為主，附簡要說明文件，適合互動裝置、軟體或表演性作品。</div>
-        <div class="sub-card-pages">建議頁數 → 1 頁</div>
+    <!-- 1. Abstract Deadline -->
+    <div class="cfp-block reveal">
+      <div class="cfp-num">01</div>
+      <div class="cfp-content">
+        <div class="cfp-title">Abstract Submission Deadline　論文摘要繳交期限</div>
+        <div class="cfp-date">
+          <span class="cfp-date-main">May 30th, 2026　2026 年 5 月 30 日（六）</span>
+        </div>
+        <ul class="cfp-list">
+          <li>Contributors should submit their abstract (up to 500 words) via the online submission form below.<br>
+          投稿者請透過下方線上投稿表單繳交論文摘要（以 500 字為原則）。</li>
+          <li>Upon receipt and confirmation of the submission, our office will reply with an email. If you do not receive a reply, please contact us by email to confirm.<br>
+          研討會主辦單位收到資料後即會回覆確認信。如未收到回覆，請來信確認。</li>
+        </ul>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLvMaJFllZRMaNMYLPAK-ALozPZwGhh1QcbhoZQ6nCQWsylA/viewform" target="_blank" class="cfp-form-btn">
+          <span>線上投稿表單</span>
+          <span style="font-size:0.8rem;opacity:0.8;">Submit via Google Form →</span>
+        </a>
       </div>
     </div>
 
-    <div style="margin-top:5rem;">
-      <div class="section-label reveal" style="margin-bottom:2.5rem;">投稿步驟 How to Submit</div>
-      <div class="steps">
-        <div class="step reveal">
-          <div class="step-num">1</div>
-          <div class="step-body">
-            <div class="step-title">下載投稿申請表</div>
-            <div class="step-desc">至官方網站下載並填寫「投稿申請表」（Google Drive 連結）。</div>
+    <!-- 2. Review Notification -->
+    <div class="cfp-block reveal">
+      <div class="cfp-num">02</div>
+      <div class="cfp-content">
+        <div class="cfp-title">Abstract Review Notification　摘要審查結果通知</div>
+        <div class="cfp-date">
+          <span class="cfp-date-main">June 30th, 2026　2026 年 6 月 30 日（二）</span>
+        </div>
+        <ul class="cfp-list">
+          <li>The review notification will be sent via email.　審查結果將以電子郵件通知投稿者。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3. Full Paper Deadline -->
+    <div class="cfp-block reveal">
+      <div class="cfp-num">03</div>
+      <div class="cfp-content">
+        <div class="cfp-title">Final Paper Submission Deadline　完整論文繳交截止</div>
+        <div class="cfp-date">
+          <span class="cfp-date-main">July 17th, 2026　2026 年 7 月 17 日（五）</span>
+        </div>
+        <ul class="cfp-list">
+          <li>Authors of accepted abstracts must submit their full paper in PDF format by this deadline in order to be included in the conference program.<br>
+          通過摘要審查的作者，需於期限之前繳交論文全文 PDF 電子檔，始得排入議程。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4. Format -->
+    <div class="cfp-block reveal">
+      <div class="cfp-num">04</div>
+      <div class="cfp-content">
+        <div class="cfp-title">Format　投稿格式</div>
+        <ul class="cfp-list">
+          <li>This conference accepts submissions in either <strong>Chinese or English</strong>, divided into three categories: paper, poster, and demo presentation.<br>
+          本會議接受中文及英文稿件，分為論文發表組、海報發表組和展示（Demo）發表組。</li>
+          <li>The paper format should follow the <a href="https://drive.google.com/drive/folders/1PrM_phg3h40Rr7wRVg3uO1-e4K3_Lcna?usp=drive_link" target="_blank" class="cfp-link">ISAT 2026 format guidelines</a>.<br>
+          英文論文撰寫格式請參考 <a href="https://drive.google.com/drive/folders/1PrM_phg3h40Rr7wRVg3uO1-e4K3_Lcna?usp=drive_link" target="_blank" class="cfp-link">ISAT 2026 格式</a>。</li>
+          <li>Chinese papers should use the font <strong>"STKaiti"（標楷體）</strong>, following the same ISAT 2026 format guidelines.<br>
+          中文論文字體請使用標楷體，格式與英文論文相同，均須依循 ISAT 2026 格式規範。</li>
+        </ul>
+
+        <div class="sub-grid" style="margin-top:2rem;">
+          <div class="sub-card">
+            <div class="sub-card-num">Category A</div>
+            <div class="sub-card-title">論文發表<br><span style="font-weight:300;font-size:0.9rem">Paper Presentation</span></div>
+            <div class="sub-card-body">以學術論文或創作思維為主，需具備完整論述結構。<br>Academic papers or creative thinking as the main focus.</div>
+            <div class="sub-card-pages">建議頁數 → 4–6 頁</div>
+          </div>
+          <div class="sub-card">
+            <div class="sub-card-num">Category B</div>
+            <div class="sub-card-title">海報發表<br><span style="font-weight:300;font-size:0.9rem">Poster Presentation</span></div>
+            <div class="sub-card-body">以創作或研究計畫為主，強調視覺呈現。<br>Creative or research projects as the main focus.</div>
+            <div class="sub-card-pages">建議頁數 → 2 頁</div>
+          </div>
+          <div class="sub-card">
+            <div class="sub-card-num">Category C</div>
+            <div class="sub-card-title">展示發表<br><span style="font-weight:300;font-size:0.9rem">Demo Presentation</span></div>
+            <div class="sub-card-body">以作品或計畫展示為主，附簡要說明文件。<br>Showcasing works or projects as the main focus.</div>
+            <div class="sub-card-pages">建議頁數 → 1 頁</div>
           </div>
         </div>
-        <div class="step reveal reveal-delay-1">
-          <div class="step-num">2</div>
-          <div class="step-body">
-            <div class="step-title">準備摘要 PDF</div>
-            <div class="step-desc">撰寫論文摘要（500 字以內），包含研究目的、方法、預期成果，存成 PDF。</div>
-          </div>
-        </div>
-        <div class="step reveal reveal-delay-2">
-          <div class="step-num">3</div>
-          <div class="step-body">
-            <div class="step-title">寄送至指定信箱</div>
-            <div class="step-desc">將申請表與摘要 PDF 寄至 atatw2014.org@gmail.com，主旨填寫「ISAT2026 論文摘要」。</div>
-          </div>
-        </div>
-        <div class="step reveal reveal-delay-3">
-          <div class="step-num">4</div>
-          <div class="step-body">
-            <div class="step-title">等候確認回信</div>
-            <div class="step-desc">主辦單位收到後將回覆確認。如三個工作日內未收到回覆，請來信確認。</div>
-          </div>
-        </div>
-        <div class="step reveal reveal-delay-4">
-          <div class="step-num">5</div>
-          <div class="step-body">
-            <div class="step-title">摘要審查通知</div>
-            <div class="step-desc">審查結果以電子郵件通知。通過者將收到完整論文繳交指引。</div>
-          </div>
-        </div>
-        <div class="step reveal reveal-delay-4">
-          <div class="step-num">6</div>
-          <div class="step-body">
-            <div class="step-title">繳交完整論文</div>
-            <div class="step-desc">通過審查者於 6/22 前繳交論文全文 PDF，依 ISAT 2026 格式規範撰寫。</div>
-          </div>
+
+        <div class="cfp-award-note reveal">
+          ISAT 2026 will present the <strong>Best Paper Award</strong> and several <strong>Outstanding Paper Awards</strong>. We welcome all submissions related to the field of art and technology.<br>
+          本次研討會將頒發<strong>最佳論文獎</strong>與<strong>佳作論文獎</strong>數名。歡迎踴躍投稿！
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -1128,11 +1267,7 @@ footer {
     <div class="section-label reveal">Venue 會議地點</div>
     <h2 class="section-heading reveal">國立臺北科技大學 ＋ 三創生活園區</h2>
     <p class="section-sub reveal">National Taipei University of Technology &amp; Syntrend Creative Park</p>
-    <div class="venue-grid">
-      <div class="venue-map-placeholder reveal">
-        <span style="position:relative;z-index:1;">地圖待嵌入</span>
-      </div>
-      <div class="reveal reveal-delay-1">
+    <div class="reveal" style="margin-top:3rem;">
         <div class="venue-name">國立臺北科技大學</div>
         <div class="venue-name-en">National Taipei University of Technology</div>
         <div class="venue-detail">
@@ -1160,7 +1295,6 @@ footer {
           <span>2026 年 8 月 5–6 日</span>
         </div>
       </div>
-    </div>
   </div>
 </section>
 
@@ -1172,7 +1306,7 @@ footer {
     <a href="mailto:atatw2014.org@gmail.com" class="contact-email reveal">atatw2014.org@gmail.com</a>
     <p class="contact-note reveal">來信主旨請清楚標示問題類別，例如「ISAT2026 投稿諮詢」或「ISAT2026 報名問題」，以利快速回覆。三個工作日內未獲回覆者，請再次來信確認。</p>
     <div style="margin-top:3rem;" class="reveal">
-      <a href="mailto:atatw2014.org@gmail.com" class="btn btn-primary" style="background:white;color:var(--accent2);border-color:white;">立即投稿 Submit Now</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLvMaJFllZRMaNMYLPAK-ALozPZwGhh1QcbhoZQ6nCQWsylA/viewform" target="_blank" class="btn btn-primary" style="background:white;color:var(--accent2);border-color:white;">立即投稿 Submit Now</a>
     </div>
   </div>
 </section>
